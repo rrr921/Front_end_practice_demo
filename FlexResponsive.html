@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<head>
+    <!--@media+flex实现响应式布局-->
+    <style>
+        @media screen and (min-width:375px) {
+            .c {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            .c-1 {
+                display: flex;
+                flex: 7;
+            }
+
+            .c-1>div {
+                background-color: white;
+                width: 95%;
+                height: 90%;
+                border-radius: 15px;
+                border-style: outset;
+                margin: auto;
+            }
+
+            .c-2 {
+                display: flex;
+                flex: 6;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .c-2>div {
+                background-color: white;
+                width: 29.8%;
+                margin: 3px;
+                height: 40%;
+                border-radius: 15px;
+                border-style: outset;
+            }
+
+            .c-3 {
+                display: flex;
+                flex: 16;
+                flex-direction: column;
+            }
+
+            .c-3>div {
+                background-color: white;
+                width: 95%;
+                height: 90%;
+                border-radius: 15px;
+                margin: 6px;
+                border-style: outset;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .b {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            .b-1 {
+                display: flex;
+                flex: 2;
+            }
+
+            .b-1>div {
+                background-color: white;
+                width: 96.5%;
+                height: 90%;
+                border-radius: 15px;
+                border-style: outset;
+                margin: auto;
+            }
+
+            .b-2 {
+                display: flex;
+                flex: 2;
+                flex: row nowrap;
+            }
+
+            .b-2>div {
+                background-color: white;
+                width: 16.2%;
+                height: 70%;
+                margin: auto;
+                border-radius: 15px;
+                border-style: outset;
+            }
+
+            .b-3 {
+                display: flex;
+                flex: 6;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .b-3-1 {
+                display: flex;
+                background-color: white;
+                flex: 1;
+                margin: 16px;
+                border-radius: 15px;
+                border-style: outset;
+            }
+
+            .b-3-2 {
+                display: flex;
+                background-color: white;
+                flex: 2;
+                margin: 16px;
+                border-radius: 15px;
+                border-style: outset;
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            .a {
+                display: flex;
+                flex-direction: row;
+                height: 100vh;
+            }
+
+            .a-1 {
+                display: flex;
+                flex: 1;
+            }
+
+            .a-1>div {
+                background-color: white;
+                width: 70%;
+                height: 95%;
+                border-radius: 15px;
+                border-style: outset;
+                margin: auto;
+            }
+
+            .a-2 {
+                display: flex;
+                flex: 6;
+                flex-direction: column;
+            }
+
+            .a-2-1 {
+                flex: 3;
+                width: 97%;
+                margin: auto;
+            }
+
+            .a-2-1>div {
+                background-color: white;
+                height: 70%;
+                border-radius: 15px;
+                border-style: outset;
+                margin-top: 1.4%;
+            }
+
+            .a-2-2 {
+                display: flex;
+                flex: 2;
+                flex: row nowrap;
+            }
+
+            .a-2-2>div {
+                background-color: white;
+                width: 100%;
+                margin: 20px;
+                border-radius: 15px;
+                border-style: outset;
+            }
+
+            .a-2-3 {
+                display: flex;
+                flex: 8;
+                align-items: stretch;
+            }
+
+            .a-2-3-1 {
+                background-color: white;
+                flex: 2;
+                margin: 20px;
+                border-radius: 15px;
+                border-style: outset;
+            }
+
+            .a-2-3-2 {
+                background-color: white;
+                flex: 5;
+                margin: 20px;
+                border-radius: 15px;
+                border-style: outset;
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body style="background-color:lightgray;overflow:hidden;">
+    <div class="a"> <!--电脑1440px使用的布局-->
+        <div class="a-1">
+            <div></div>
+        </div>
+        <div class="a-2">
+            <div class="a-2-1">
+                <div></div>
+            </div>
+            <div class="a-2-2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="a-2-3">
+                <div class="a-2-3-1"></div>
+                <div class="a-2-3-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="b"> <!--平板768px使用的布局-->
+        <div class="b-1">
+            <div></div>
+        </div>
+        <div class="b-2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="b-3">
+            <div class="b-3-1"></div>
+            <div class="b-3-2"></div>
+        </div>
+    </div>
+    <div class="c"> <!--手机375px使用的布局-->
+        <div class="c-1">
+            <div></div>
+        </div>
+        <div class="c-2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="c-3">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

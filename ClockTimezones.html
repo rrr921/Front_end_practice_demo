@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .clock {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chose your timezone</h1>
+    <select id="timezone" onchange="updateTime()">
+        <option value="UTC">UTC</option>
+        <option value="Asia/Shanghai">Beijing</option>
+        <option value="America/New_York">New York</option>
+        <option value="Europe/London">London</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Asia/Singapore">Singapore</option>
+        <option value="Australia/Sydney">Sydney</option>
+        <option value="Europe/Paris">Paris</option>
+        <option value="America/Buenos_Aires">Buenos Aires</option>
+    </select>
+    <div class="clock" id="clock"></div>
+
+    <script>
+        function updateTime() {
+            const timezone = document.getElementById('timezone').value;
+            const now = new Date().toLocaleString('en-US', { timeZone: timezone });
+            document.getElementById('clock').textContent = now;
+        }
+        //每1000ms一调用，也就是每1s
+        setInterval(updateTime, 1000);
+        //保证一打开就执行
+        updateTime();
+    </script>
+</body>
+
+</html>
